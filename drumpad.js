@@ -1,20 +1,20 @@
+import { SOUNDS, KEY_MAP } from "./constants";
+
 const pads = document.querySelectorAll('.pad');
 
-const SOUNDS = [
-    "sounds/kick.wav",
-    "sounds/cymbal.wav",
-    "sounds/snare.wav",
-    "sounds/openhat.wav",
-    "sounds/long-crash.wav",
-    "sounds/hihat.wav",
-];
 
-const loadSounds = () => {
 
+const loadSounds = (sounds) => {
+    sounds.forEach((sound) => {
+        const audio = new Audio(sound);
+        audio.load()
+    })
 }
+
+loadSounds(SOUNDS);
 
 const keyPressHandler = (evt) => {
     console.log(evt.key);
 }
 
-document.addEventListener('keypress', );
+document.addEventListener('keypress', keyPressHandler);
