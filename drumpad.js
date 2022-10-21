@@ -25,7 +25,7 @@ const createBubble = (index) => {
     bubble.className = pads[index].className;
     bubble.style.animation = 'jump .5s';    
     bubble.addEventListener('animationend', () => {
-        const throwawayNode = visual.removeChild(bubble);
+        visual.removeChild(bubble);
     })
 };
 
