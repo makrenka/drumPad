@@ -18,6 +18,17 @@ const animatePad = (index) => {
     })
 };
 
+
+const createBubble = (index) => {
+    const bubble = document.createElement('div');
+    visual.appendChild(bubble);
+    bubble.className = pads[index].className;
+    bubble.style.animation = 'jump .5s';    
+    bubble.addEventListener('animationend', () => {
+        visual.removeChild(bubble);
+    })
+};
+
 const play = (index) => {
     playSound(SOUNDS, index);
     animatePad(index);
